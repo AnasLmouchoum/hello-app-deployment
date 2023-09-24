@@ -1,10 +1,14 @@
-FROM openjdk:17
+# FROM openjdk:17
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY *.jar /app/helloApp.jar
+# COPY *.jar /app/helloApp.jar
 
-EXPOSE 8080
+# EXPOSE 8080
 
-CMD ["java", "-jar", "helloApp.jar"]
+# CMD ["java", "-jar", "helloApp.jar"]
 
+FROM openjdk:11-jre
+VOLUME /tmp
+ADD target/springBootDocker-1.0.0.jar springBootDocker.jar
+ENTRYPOINT ["java","-jar","/springBootDocker.jar"]
