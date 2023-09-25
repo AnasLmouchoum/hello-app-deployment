@@ -10,4 +10,11 @@ public class HelloWorldController {
     public String sendGreetings() {
         return "Hello, World! This is My first deployment Using Docker, K8s & Jenkins";
     }
+
+
+    @GetMapping("/bye")
+    public String goodBye() {
+        return "Bye! Disconnecting";
+    }
+
 }
